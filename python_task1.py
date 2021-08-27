@@ -1,13 +1,6 @@
 # HAND CRICKET GAME
 import random
 
-# Taking number of overs as input from user
-overs = int(input("Enter number of overs : "))
-
-# Generating the Score of Computer
-com_score = random.randint(0,overs*36)
-print(f'Computer has scored {com_score} runs. Your Target is {com_score+1} runs')
-
 # Function to Check if the Player won the Game
 def iswin(com_score,tot_score):
     if (tot_score>com_score):
@@ -54,4 +47,18 @@ def startbowling(overs,com_score):
         else:
             print('\nComputer wins the Game')
 
-startbowling(overs,com_score)
+ch = ['y','Y']
+
+while 'y' in ch or "Y" in ch:
+    
+    # Taking number of overs as input from user
+    overs = int(input("Enter number of overs : "))
+
+    # Generating the Score of Computer
+    com_score = random.randint(0,overs*36)
+    print(f'Computer has scored {com_score} runs. Your Target is {com_score+1} runs')
+    
+    startbowling(overs,com_score)
+    
+    print('Do you want to Play again? (Y/N)')
+    ch = [input()]
